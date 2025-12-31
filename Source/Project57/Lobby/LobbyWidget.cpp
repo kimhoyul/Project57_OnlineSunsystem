@@ -24,10 +24,10 @@ void ULobbyWidget::NativeOnInitialized()
 	NET_LOG("Begin");
 
 
-	if (StartButton)
+	/*if (StartButton)
 	{
 		StartButton->OnClicked.AddDynamic(this, &ULobbyWidget::Start);
-	}
+	}*/
 
 	if (ChatInput)
 	{
@@ -85,10 +85,10 @@ void ULobbyWidget::AddMessage(const FText& Message)
 
 void ULobbyWidget::ShowStartButton()
 {
-	if (StartButton)
+	/*if (StartButton)
 	{
 		StartButton->SetVisibility(ESlateVisibility::Visible);
-	}
+	}*/
 }
 
 void ULobbyWidget::Start()

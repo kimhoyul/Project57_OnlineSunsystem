@@ -26,8 +26,8 @@ public:
 
 
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Component, meta = (BindWidget))
-	TObjectPtr<UButton> StartButton;
+	/*UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Component, meta = (BindWidget))
+	TObjectPtr<UButton> StartButton;*/
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Component, meta = (BindWidget))
 	TObjectPtr<UEditableTextBox> ChatInput;

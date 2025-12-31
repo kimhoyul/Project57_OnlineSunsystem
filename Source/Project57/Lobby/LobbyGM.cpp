@@ -96,5 +96,6 @@ void ALobbyGM::StartGame()
 			PC->S2C_ShowLoadingScreen();
 		}
 	}
+
 	GetWorld()->ServerTravel(TEXT("InGame"));
 }

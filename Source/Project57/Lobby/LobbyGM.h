@@ -28,6 +28,7 @@ public:
 
 	void CheckConnectionCount();
 
+	UFUNCTION(BlueprintCallable)
 	void StopTimer();
 
 	void StartGame();
