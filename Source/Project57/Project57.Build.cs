@@ -15,6 +15,8 @@ public class Project57 : ModuleRules
 
 		PublicIncludePaths.AddRange(new string[] { "Project57" });
 
+		SetupIrisSupport(Target);
+		
 		// Uncomment if you are using Slate UI
 		PrivateDependencyModuleNames.AddRange(new string[] { "Slate", "SlateCore" });
 

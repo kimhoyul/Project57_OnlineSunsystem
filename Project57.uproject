@@ -28,6 +28,10 @@
 			"SupportedTargetPlatforms": [
 				"Win64"
 			]
+		},
+		{
+			"Name": "Iris",
+			"Enabled": true
 		}
 	]
 }

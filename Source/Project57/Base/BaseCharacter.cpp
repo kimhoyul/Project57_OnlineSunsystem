@@ -155,6 +155,7 @@ void ABaseCharacter::StopFire()
 void ABaseCharacter::C2S_StartFire_Implementation()
 {
 	bIsFire = true;
+	MARK_PROPERTY_DIRTY_FROM_NAME(ThisClass, bIsFire, this)
 	DoFire();
 }
 
@@ -410,15 +411,18 @@ void ABaseCharacter::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLi
 {
 	Super::GetLifetimeReplicatedProps(OutLifetimeProps);
 
-	DOREPLIFETIME(ABaseCharacter, bSprint);
-	DOREPLIFETIME(ABaseCharacter, CurrentHP);
-	DOREPLIFETIME(ABaseCharacter, MaxHP);
-	DOREPLIFETIME(ABaseCharacter, bIsFire);
-	DOREPLIFETIME(ABaseCharacter, bLeftLean);
-	DOREPLIFETIME(ABaseCharacter, bRightLean);
-	DOREPLIFETIME(ABaseCharacter, bAiming);
-	DOREPLIFETIME(ABaseCharacter, bIsIronSight);
-	DOREPLIFETIME(ABaseCharacter, WeaponState);
+	FDoRepLifetimeParams RepParams;
+	RepParams.bIsPushBased = true;
+
+	DOREPLIFETIME_WITH_PARAMS(ABaseCharacter, bSprint, RepParams);
+	DOREPLIFETIME_WITH_PARAMS(ABaseCharacter, CurrentHP, RepParams);
+	DOREPLIFETIME_WITH_PARAMS(ABaseCharacter, MaxHP, RepParams);
+	DOREPLIFETIME_WITH_PARAMS(ABaseCharacter, bIsFire, RepParams);
+	DOREPLIFETIME_WITH_PARAMS(ABaseCharacter, bLeftLean, RepParams);
+	DOREPLIFETIME_WITH_PARAMS(ABaseCharacter, bRightLean, RepParams);
+	DOREPLIFETIME_WITH_PARAMS(ABaseCharacter, bAiming, RepParams);
+	DOREPLIFETIME_WITH_PARAMS(ABaseCharacter, bIsIronSight, RepParams);
+	DOREPLIFETIME_WITH_PARAMS(ABaseCharacter, WeaponState, RepParams);
 }
 
 
